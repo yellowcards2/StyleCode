@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private Transform _placeZone;
     [SerializeField] private float _speed;
+    [SerializeField] private Transform _placesZone;
 
     private Vector3 _placePosition;
     private Transform[] _places;
@@ -11,10 +11,10 @@ public class Mover : MonoBehaviour
 
     private void Start()
     {
-        _places = new Transform[_placeZone.childCount];
+        _places = new Transform[_placesZone.childCount];
 
         for (int i = 0; i < _places.Length; i++)
-            _places[i] = _placeZone.GetChild(i);
+            _places[i] = _placesZone.GetChild(i);
 
         _placePosition = _places[_index].position;
     }
